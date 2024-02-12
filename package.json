@@ -1,27 +1,29 @@
 {
-  "name": "@hexlet/code",
-  "version": "1.0.0",
-  "description": "Slack chat",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MostOfLuck/frontend-project-12.git"
-  },
-  "keywords": [
-    "javascript",
-    "slack",
-    "chat"
-  ],
-  "author": "MostOfLuck",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MostOfLuck/frontend-project-12/issues"
-  },
-  "homepage": "https://github.com/MostOfLuck/frontend-project-12#readme",
-  "dependencies": {
-    "@hexlet/chat-server": "^2.0.0"
-  }
+	"name": "@hexlet/code",
+	"version": "1.0.0",
+	"description": "Slack chat",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "serve -s build",
+		"build": "react-scripts build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MostOfLuck/frontend-project-12.git"
+	},
+	"keywords": [
+		"javascript",
+		"slack",
+		"chat"
+	],
+	"author": "MostOfLuck",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/MostOfLuck/frontend-project-12/issues"
+	},
+	"homepage": "https://github.com/MostOfLuck/frontend-project-12#readme",
+	"dependencies": {
+		"@hexlet/chat-server": "^2.0.0"
+	}
 }
