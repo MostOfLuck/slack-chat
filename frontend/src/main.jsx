@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import ErrorPage from './error-page'
 import './index.css'
 import Contact from './routes/contact'
-import { default as LoginPage, default as Root } from './routes/root'
+import { default as LoginPage, default as Root } from './routes/loginPage'
 
 const App = () => (
 	<Router>
