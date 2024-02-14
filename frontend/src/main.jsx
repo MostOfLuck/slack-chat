@@ -1,17 +1,18 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import ErrorPage from './error-page'
 import './index.css'
+import Contact from './routes/contact'
 import { default as LoginPage, default as Root } from './routes/root'
-
-const NotFoundPage = () => <h1>404 Not Found</h1>
 
 const App = () => (
 	<Router>
 		<Routes>
 			<Route path='/' element={<Root />} />
 			<Route path='login' element={<LoginPage />} />
-			<Route path='*' element={<NotFoundPage />} />
+			<Route path='*' element={<ErrorPage />} />
+			<Route path='contacts/:contactId' element={<Contact />} />
 		</Routes>
 	</Router>
 )
