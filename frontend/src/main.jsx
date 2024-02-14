@@ -1,18 +1,25 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
-import ErrorPage from './error-page'
 import './index.css'
-import Contact from './routes/contact'
+import ErrorPage from './routes/error-page'
 import { default as LoginPage, default as Root } from './routes/loginPage'
+import Navigation from './routes/nav'
 
 const App = () => (
 	<Router>
 		<Routes>
-			<Route path='/' element={<Root />} />
-			<Route path='login' element={<LoginPage />} />
+			<Route
+				path='/'
+				element={
+					<>
+						<Navigation />
+						<Root />
+					</>
+				}
+			/>
+			<Route path='/login' element={<LoginPage />} />
 			<Route path='*' element={<ErrorPage />} />
-			<Route path='contacts/:contactId' element={<Contact />} />
 		</Routes>
 	</Router>
 )
