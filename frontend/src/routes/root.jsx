@@ -43,6 +43,7 @@ const LoginPage = () => (
 						onChange={handleChange}
 						onBlur={handleBlur}
 						value={values.email}
+						placeholder='Ваш ник'
 					/>
 					{errors.email && touched.email && errors.email}
 					<input
@@ -51,10 +52,11 @@ const LoginPage = () => (
 						onChange={handleChange}
 						onBlur={handleBlur}
 						value={values.password}
+						placeholder='Ваш пароль'
 					/>
 					{errors.password && touched.password && errors.password}
 					<button type='submit' disabled={isSubmitting}>
-						Submit
+						Войти
 					</button>
 				</form>
 			)}
