@@ -17,7 +17,15 @@ h1 {
 	color: rgb(43, 43, 43);
 }
 h1 {
-	margin: 0, 0, 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0px;
+	margin-bottom: 24px;
+	align-items: center;
+}
+#block-h1 {
+	width: 258px;
 }
 button {
 	width: 265px;
@@ -62,6 +70,9 @@ form input {
 form input {
 	padding: 16px, 12px;
 	margin: 9px;
+	border: none;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+	border-radius: 4%;
 }
 
 input:focus {
@@ -92,4 +103,15 @@ input:focus {
 	color: rgba(0, 0, 0, 0.9);
 	margin-left: 66px;
 	text-decoration: none;
+}
+#container {
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+#container {
+	content: '';
+	position: absolute;
+	width: 675px;
+	height: 400px;
+	background-color: white;
+	z-index: -1;
 }
