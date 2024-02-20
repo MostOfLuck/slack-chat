@@ -1,25 +1,30 @@
 {
-	"name": "@hexlet/code",
-	"version": "1.0.0",
-	"description": "chat",
-	"main": "index.js",
-	"scripts": {
-		"build": "npm run build --prefix frontend",
-		"start": "start-server -s ./frontend/build",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"postinstall": "cd frontend && npm ci"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/MostOfLuck/frontend-project-12"
-	},
-	"author": "MostOfLuck",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/MostOfLuck/frontend-project-12/issues"
-	},
-	"homepage": "https://github.com/MostOfLuck/frontend-project-12/blob/main/README.md",
-	"dependencies": {
-		"@hexlet/chat-server": "^1.1.6"
-	}
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "chat",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "start": "start-server -s ./frontend/build",
+    "postinstall": "cd frontend && npm ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MostOfLuck/frontend-project-12"
+  },
+  "author": "MostOfLuck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MostOfLuck/frontend-project-12/issues"
+  },
+  "homepage": "https://github.com/MostOfLuck/frontend-project-12/blob/main/README.md",
+  "dependencies": {
+    "@hexlet/chat-server": "^1.1.6",
+    "@rollbar/react": "^0.11.2",
+    "rollbar": "^2.26.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.2",
+    "@types/node": "^20.11.19"
+  }
 }
