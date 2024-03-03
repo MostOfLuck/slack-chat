@@ -15,9 +15,3 @@ deploy:
 
 start:
 	make start-backend & make start-frontend
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 6b7c67145332ce9ae022be2870e7bbdfbbe98662
