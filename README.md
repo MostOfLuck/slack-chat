@@ -9,6 +9,12 @@ Communication is divided into channels. Each channel is a separate chat where us
 
 Guide:
 -------
+
+Clone the repo:
+ ```bash
+$  git clone git@github.com:MostOfLuck/frontend-project-12.git
+```
+
 Install depencies:
  ```bash
 $  npm install
