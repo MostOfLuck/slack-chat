@@ -5,3 +5,21 @@
 # Slack chat
 
 Communication is divided into channels. Each channel is a separate chat where users can communicate with each other. On the left, you will see a full list of available channels that you can join. And you can also create your own channel. By default, you are automatically added to #general. This is a general channel for communication of all users. In the messages section, you can send private messages to other people who are registered in our chat. Here you will see a list of your recent dialogs.
+
+
+Guide:
+-------
+Install depencies:
+ ```bash
+$  npm install
+```
+
+Build project:
+ ```bash
+$  npm run build
+```
+
+Start production:
+ ```bash
+$  npm start
+```
