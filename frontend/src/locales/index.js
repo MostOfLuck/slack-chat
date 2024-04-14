@@ -1,5 +1,5 @@
 import ru from './ru.js';
 
-export default {
-  ru,
-};
+const locales = { ru };
+
+export default locales;

@@ -1,3 +1,20 @@
+@import 'bootstrap';
+
+:root {
+  --green-dark: #85adad;
+  --green-middle: #a3c2c2;
+  --green-light: #d1e0e0;
+  --green-super-light: #e0ebeb;
+
+  --grey-dark: #263238;
+  --grey-middle: #37474F;
+  --grey-light: #455A64;
+
+  --white-grey-dark: #E0E0E0;
+  --white-grey-middle: #E6E6E6;
+  --white-grey-light: #FAFAFA;
+  --white: #FFFFFF;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +22,55 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color: var(--grey-light)
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* 
+.container-fluid {
+  background: var(--white-grey-light);
+}
+
+.card {
+  background-color: var(--white);
+}
+
+.card-img {
+  width: 270px;
+  height: 270px;
+  margin-right: 10px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  color: var(--green-dark);
+  font-weight: bold;
+}
+
+.link {
+  color: var(--green-dark)
+}
+
+.form-floating {
+  color: var(--grey-dark);
+} */
+
+.form-control:focus {
+  border-color: var(--green-light);
+  box-shadow: 2px 2px 5px 0 var(--green-middle);
+}
+/* 
+.btn-danger {
+  padding: 5px 8px;
+  margin: 15px 5px 0;
+
+  border-radius: 5px;
+} */

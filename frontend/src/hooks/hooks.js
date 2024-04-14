@@ -1,11 +1,7 @@
 import { useContext } from 'react';
 
-import { AuthContext, chatApiContext } from '../context/context.js';
+import { ChatContext } from '../context/ChatContext';
+import { UserDataContext } from '../context/UserDataContextProvider';
 
-const useAuth = () => useContext(AuthContext);
-const useChatApi = () => {
-  const chatApi = useContext(chatApiContext);
-  return chatApi;
-};
-
-export { useAuth, useChatApi };
+export const useAuthorization = () => useContext(UserDataContext);
+export const useChatApi = () => useContext(ChatContext);
