@@ -24,6 +24,10 @@ Build project:
  ```bash
 $  npm run build
 ```
+Run the server:
+ ```bash
+$  npx start-server
+```
 
 Start production:
  ```bash
