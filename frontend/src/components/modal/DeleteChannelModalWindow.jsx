@@ -12,10 +12,14 @@ const DeleteChannelModalWindow = () => {
   const relevantChannelId = useSelector((state) => state.modalWindow.relevantChannel);
   const { t } = useTranslation();
 
-  const handleDeleteChannel = (id) => {
-    removeSelectedChannel(id);
-    toast.success(t('toast.channelRemoval'));
-    dispatch(closeModalWindow());
+  const handleDeleteChannel = async (id) => {
+    try {
+      await removeSelectedChannel(id);
+      toast.success(t('toast.channelRemoval'));
+      dispatch(closeModalWindow());
+    } catch (error) {
+      console.error('Failed to delete channel:', error);
+    }
   };
 
   const handleCloseModalWindow = () => {
