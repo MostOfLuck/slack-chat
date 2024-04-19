@@ -11,7 +11,7 @@ const Channel = ({ channel }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const {
-    id, name, removable, isActive,
+    id, name, isActive,
   } = channel;
   const channelName = leoProfanity.clean(name);
 
@@ -27,7 +27,7 @@ const Channel = ({ channel }) => {
     dispatch(setCurrentChannel(id));
   };
 
-  if (!removable) {
+  if (!channel.removable) {
     return (
       <Nav.Item className="w-100">
         <Button
