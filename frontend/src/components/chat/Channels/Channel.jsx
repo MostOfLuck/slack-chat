@@ -5,19 +5,26 @@ import {
 import leoProfanity from 'leo-profanity';
 import { useTranslation } from 'react-i18next';
 import { openModalWindow } from '../../../slices/modalWindowSlice';
+import { setCurrentChannel } from '../../../slices/channelSlice';
 
-const Channel = ({ isActive, channel, onClick }) => {
+const Channel = ({ channel }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { id, name, removable } = channel;
+  const {
+    id, name, removable, isActive,
+  } = channel;
   const channelName = leoProfanity.clean(name);
 
-  const handleRenameChannel = (channelId) => {
-    dispatch(openModalWindow({ type: 'rename', relevantChannel: channelId }));
+  const handleRenameChannel = () => {
+    dispatch(openModalWindow({ type: 'rename', relevantChannel: id }));
   };
 
-  const handleRemoveChannel = (channelId) => {
-    dispatch(openModalWindow({ type: 'remove', relevantChannel: channelId }));
+  const handleRemoveChannel = () => {
+    dispatch(openModalWindow({ type: 'remove', relevantChannel: id }));
+  };
+
+  const handleClick = () => {
+    dispatch(setCurrentChannel(id));
   };
 
   if (!removable) {
@@ -26,7 +33,7 @@ const Channel = ({ isActive, channel, onClick }) => {
         <Button
           type="button"
           className="w-100 rounded-0 text-start text-truncate"
-          onClick={onClick}
+          onClick={handleClick}
           variant={isActive ? 'secondary' : null}
         >
           <span className="me-1">{t('channel.prefix')}</span>
@@ -42,7 +49,7 @@ const Channel = ({ isActive, channel, onClick }) => {
         <Button
           type="button"
           className="w-100 rounded-0 text-start text-truncate"
-          onClick={onClick}
+          onClick={handleClick}
           variant={isActive ? 'secondary' : null}
         >
           <span className="me-1">{t('channel.prefix')}</span>
@@ -58,10 +65,10 @@ const Channel = ({ isActive, channel, onClick }) => {
           <span className="visually-hidden">{t('channel.controlChannel')}</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item onClick={() => handleRemoveChannel(id)}>
+          <Dropdown.Item onClick={handleRemoveChannel}>
             {t('channel.removeChannel')}
           </Dropdown.Item>
-          <Dropdown.Item onClick={() => handleRenameChannel(id)}>
+          <Dropdown.Item onClick={handleRenameChannel}>
             {t('channel.renameChannel')}
           </Dropdown.Item>
         </Dropdown.Menu>
