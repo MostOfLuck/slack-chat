@@ -87,7 +87,6 @@ const RenameChannelModalWindow = () => {
               <Button
                 variant="primary"
                 type="submit"
-                onClick={formik.handleSubmit}
               >
                 {t('modal.sendBtn')}
               </Button>
