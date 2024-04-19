@@ -32,9 +32,8 @@ const Channel = ({ channel }) => {
       <Nav.Item className="w-100">
         <Button
           type="button"
-          className="w-100 rounded-0 text-start text-truncate"
+          className={`w-100 rounded-0 text-start text-truncate ${isActive ? 'btn-secondary' : ''}`}
           onClick={handleClick}
-          variant={isActive ? 'secondary' : null}
         >
           <span className="me-1">{t('channel.prefix')}</span>
           {name}
