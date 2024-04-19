@@ -1,8 +1,8 @@
+// ChatContext.jsx
 import { createContext, useMemo, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import axios from 'axios';
 import { addChannel, setCurrentChannel } from '../slices/channelSlice';
-import { chatContextRoutes } from '../routes';
+import fetchInitialData from './InitialDataThunk';
 
 export const ChatContext = createContext({});
 
@@ -50,11 +50,9 @@ const ChatContextProvider = ({ socket, children }) => {
 
   const getChannelsData = useCallback(
     async () => {
-      const user = JSON.parse(localStorage.getItem('user'));
-      const response = await axios.get(chatContextRoutes.data(), { headers: { Authorization: `Bearer ${user.token}` } });
-      return response;
+      dispatch(fetchInitialData());
     },
-    [],
+    [dispatch],
   );
 
   const memoAuth = useMemo(
