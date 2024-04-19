@@ -33,3 +33,8 @@ Start production:
  ```bash
 $  npm start
 ```
+
+Demo:
+------
+
+You can test my app here: [SLACK CHAT](https://frontend-project-11-jbr8-9cv2ozm81-sams-projects-8bd7ebfe.vercel.app/)
