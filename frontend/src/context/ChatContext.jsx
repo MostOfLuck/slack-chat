@@ -1,7 +1,9 @@
 // ChatContext.jsx
 import { createContext, useMemo, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { addChannel, setCurrentChannel } from '../slices/channelSlice';
+import {
+  addChannel, setCurrentChannel, deleteChannel, renameChannel,
+} from '../slices/channelSlice';
 import fetchInitialData from './InitialDataThunk';
 
 export const ChatContext = createContext({});
@@ -35,8 +37,9 @@ const ChatContextProvider = ({ socket, children }) => {
       await socket
         .timeout(timeout)
         .emit('removeChannel', { id });
+      dispatch(deleteChannel(id));
     },
-    [socket],
+    [socket, dispatch],
   );
 
   const renameSelectedChannel = useCallback(
@@ -44,8 +47,9 @@ const ChatContextProvider = ({ socket, children }) => {
       await socket
         .timeout(timeout)
         .emit('renameChannel', { id, name });
+      dispatch(renameChannel({ id, changes: { name } }));
     },
-    [socket],
+    [socket, dispatch],
   );
 
   const getChannelsData = useCallback(
