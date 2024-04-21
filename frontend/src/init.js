@@ -1,18 +1,18 @@
-import { ErrorBoundary, Provider as RollbarProvider } from '@rollbar/react';
-import i18next from 'i18next';
-import LeoProfanity from 'leo-profanity';
 import React from 'react';
+import i18next from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
-import { Provider } from 'react-redux';
 import io from 'socket.io-client';
-import App from './components/App';
+import { Provider } from 'react-redux';
+import LeoProfanity from 'leo-profanity';
+import { Provider as RollbarProvider, ErrorBoundary } from '@rollbar/react';
 import ChatContextProvider from './context/ChatContext';
+import store from './slices';
+import App from './components/App';
 import UserDataContextProvider from './context/UserDataContextProvider';
 import resources from './locales/index.js';
-import { appRoutes } from './routes';
-import store from './slices';
-import { addChannel, deleteChannel, renameChannel } from './slices/channelSlice';
 import { addMessage } from './slices/messageSlice';
+import { addChannel, deleteChannel, renameChannel } from './slices/channelSlice';
+import { appRoutes } from './routes';
 
 const defaultLanguage = 'ru';
 
@@ -49,9 +49,9 @@ const init = async () => {
   profanityFilter.add(profanityFilter.getDictionary(defaultLanguage));
 
   const rollbarConfig = {
-    accessToken: '12e136b5e41142d48b79cbb31075cc15',
+    accessToken: process.env.REACT_APP_ROLLBAR_TOKEN,
     payload: {
-      environment: 'testenv',
+      environment: 'production',
     },
     captureUncaught: true,
     captureUnhandledRejections: true,
