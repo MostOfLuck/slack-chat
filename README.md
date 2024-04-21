@@ -37,4 +37,4 @@ $  npm start
 Demo:
 ------
 
-You can test my app here: [SLACK CHAT](https://railway.app/project/48526126-6ad4-4760-8dc7-0e1f9ae4d7eb/service/7db312f0-e6e7-4d20-9780-c6134450067d?id=e1097361-c7bf-4d15-ab26-c5dff6cd3c57)
+You can test my app here: [SLACK CHAT](https://frontend-project-12-production-55b7.up.railway.app/login)
